@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:38:38 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 01:27:17 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 01:35:29 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ t_ambient_lightning	ambient_lightning(t_is_set *is_set, char *line)
 	cnt = count_split(split);
 	if (cnt != 3)
 		print_error_and_exit(ERR_AL_ARGC);
+	if (ft_strcmp(split[0], AMBIENT_LIGHTNING) != 0)
+		print_error_and_exit(ERR_UNKNOWN);
 	ambient_lightning.ratio = validate_and_parse_ambient_light_ratio(split[1]);
 	ambient_lightning.color = validate_and_parse_rgb(split[2]);
 	free_split(split);
