@@ -12,6 +12,7 @@
 
 #include "../includes/ft_stdlib.h"
 #include "../includes/ft_string.h"
+#include "../includes/ft_stdio.h"
 
 void	*ft_xmalloc(size_t size)
 {

@@ -21,7 +21,7 @@
 # include <stdbool.h>
 # include <time.h>
 
-# include "../libft/includes/libft.h"
+# include "libft.h"
 # include "parser.h"
 
 #endif
