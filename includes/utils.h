@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:31:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 21:26:58 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/01 21:30:13 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include "libft.h"
 
-#define ERR_DIRECTORY "is a directory"
+# define ERR_DIRECTORY "is a directory"
 
 // open.c
 void	check_and_exit_if_directory(char *file);
