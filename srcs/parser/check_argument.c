@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:40:34 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 21:16:49 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/01 22:48:46 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ static bool	check_argument_count(int argc)
 
 static bool	check_argument_file_name(char *argv)
 {
-	size_t	len;
+	const size_t	len = ft_strlen(argv);
 
-	len = ft_strlen(argv);
 	if (len <= 3)
 		return (false);
 	if (ft_strncmp(&argv[len - 3], ".rt", 3))

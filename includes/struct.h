@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 20:26:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 23:10:16 by tsishika         ###   ########.fr       */
+/*   Created: 2024/04/01 23:08:19 by tsishika          #+#    #+#             */
+/*   Updated: 2024/04/01 23:08:44 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-int	main(int argc, char **argv)
+typedef struct s_data	t_data;
+
+struct s_data
 {
-	t_data	data;
+	int	test;
+};
 
-	parser(&data, argc, argv);
-}
-
-// int main()
-// {
-// 	data_init
-// 	parser
-// 	render
-// }
+#endif
