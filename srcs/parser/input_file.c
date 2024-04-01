@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:35:17 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 00:43:28 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 01:11:04 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 static void	parse_line(t_data *data, char *line)
 {
-	(void)data;
 	while (ft_isspace(*line))
 		line++;
-	if (ft_strncmp(line, "A", 1) == 0)
+	if (ft_strncmp(line, AMBIENT_LIGHTNING, 1) == 0)
 		data->ambient_lightning = ambient_lightning(line);
-	else if (ft_strncmp(line, "C", 1) == 0)
+	else if (ft_strncmp(line, CAMERA, 1) == 0)
 		printf("C\n");
-	else if (ft_strncmp(line, "L", 1) == 0)
+	else if (ft_strncmp(line, LIGHT, 1) == 0)
 		printf("L\n");
-	else if (ft_strncmp(line, "sp", 2) == 0)
+	else if (ft_strncmp(line, SPHERE, 2) == 0)
 		printf("sp\n");
-	else if (ft_strncmp(line, "pl", 2) == 0)
+	else if (ft_strncmp(line, PLANE, 2) == 0)
 		printf("pl\n");
-	else if (ft_strncmp(line, "cy", 2) == 0)
+	else if (ft_strncmp(line, CYLINDER, 2) == 0)
 		printf("cy\n");
 	else
 		print_error_and_exit(ERR_UNKNOWN);
@@ -38,7 +37,6 @@ void	input_file(t_data *data, char *argv)
 	char	*line;
 	int		fd;
 
-	(void)data;
 	fd = open_file_and_return_descriptor(argv);
 	while (true)
 	{

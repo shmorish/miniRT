@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:08:19 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 00:55:58 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 00:57:20 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ struct s_vector
 struct s_ambient_lightning
 {
 	double	ratio;
-	t_rgb	color;
+	int		color;
 };
 
 struct s_camera

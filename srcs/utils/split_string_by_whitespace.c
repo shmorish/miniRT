@@ -6,13 +6,13 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 00:10:00 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 00:45:46 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 01:04:57 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static char *replace_whitespace_with_single_space(char *line)
+static char	*replace_whitespace_with_single_space(char *line)
 {
 	char	*modified_line;
 	size_t	i;
@@ -30,10 +30,10 @@ static char *replace_whitespace_with_single_space(char *line)
 	return (modified_line);
 }
 
-char **split_string_by_whitespace(char *line)
+char	**split_string_by_whitespace(char *line)
 {
-	char **split;
-	char *modified_line;
+	char	**split;
+	char	*modified_line;
 
 	modified_line = replace_whitespace_with_single_space(line);
 	split = ft_split(modified_line, ' ');
@@ -45,7 +45,7 @@ char **split_string_by_whitespace(char *line)
 
 size_t	count_split(char **split)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (split[i])
@@ -55,7 +55,7 @@ size_t	count_split(char **split)
 
 void	free_split(char **split)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (split[i])

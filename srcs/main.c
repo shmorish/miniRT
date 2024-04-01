@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:26:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 00:32:16 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 01:16:23 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	test(t_data *data)
 {
-	printf("ambient_lightning\n");
+	const int	red = data->ambient_lightning.color >> 16 & 0xFF;
+	const int	green = data->ambient_lightning.color >> 8 & 0xFF;
+	const int	blue = data->ambient_lightning.color & 0xFF;
+
+	printf("ambient lightning\n");
 	printf("ratio: %f\n", data->ambient_lightning.ratio);
-	printf("red: %d\n", data->ambient_lightning.color.red);
-	printf("green: %d\n", data->ambient_lightning.color.green);
-	printf("blue: %d\n", data->ambient_lightning.color.blue);
+	printf("color: %d\n", data->ambient_lightning.color);
+	printf("color: %d %d %d\n", red, green, blue);
 }
 
 int	main(int argc, char **argv)
@@ -36,11 +39,11 @@ int	main(int argc, char **argv)
 // 	render
 // }
 
-// #ifdef DEBUG
+#ifdef DEBUG
 
 __attribute__((destructor)) static void	destructor(void)
 {
 	system("leaks -q miniRT");
 }
 
-// #endif
+#endif

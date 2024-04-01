@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:31:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 00:50:06 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 01:00:12 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_perror_and_exit(char *str);
 void	print_error_with_context_and_exit(char *str1, char *str2);
 
 // rgb.c
-t_rgb	validate_and_parse_rgb(char *str);
+int		validate_and_parse_rgb(char *str);
 
 // split_string_by_whitespace.c
 char	**split_string_by_whitespace(char *line);
