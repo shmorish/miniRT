@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:53 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 01:34:21 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 04:15:52 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,8 @@ void				input_file(t_data *data, char *argv);
 
 // parser.c
 void				parser(t_data *data, int argc, char **argv);
+
+// rgb.c
+int		validate_and_parse_rgb(char *str);
 
 #endif
