@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   open.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 20:31:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 21:18:54 by tsishika         ###   ########.fr       */
+/*   Created: 2024/04/01 21:18:16 by tsishika          #+#    #+#             */
+/*   Updated: 2024/04/01 21:19:14 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "miniRT.h"
 
-# include <stdio.h>
-# include "libft.h"
+void	check_and_exit_if_directory(char *file)
+{
+	int	fd;
 
-// open.c
-void	check_and_exit_if_directory(char *file);
-int		open_file_and_return_descriptor(char *file);
+	fd = open(file, O_DIRECTORY);
+	if (0 <= fd)
+	{
+		close(fd);
+		print_perror_and_exit(file);
+	}
+}
 
-// print_error.c
-void	print_error(char *str);
-void	print_perror(char *str);
-void	print_error_and_exit(char *str);
-void	print_perror_and_exit(char *str);
+int	open_file_and_return_descriptor(char *file)
+{
+	int	fd;
 
-#endif
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
+		print_perror_and_exit(file);
+	return (fd);
+}
