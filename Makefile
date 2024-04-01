@@ -1,7 +1,7 @@
 NAME		:= miniRT
 INC			:= $(shell find . -name "*.h" -exec dirname {} \; | sort -u | sed 's/^/-I /')
 SRCS_DIR	:= ./srcs
-SRCS	    := $(shell find . -name "*.c" | grep -v mlx)
+SRCS		:= $(shell find . -name "*.c" | grep -v mlx)
 OBJS_DIR	:= ./objs
 OBJS		:= $(subst $(SRCS_DIR), $(OBJS_DIR), $(SRCS:.c=.o))
 DEPS		:= $(subst $(SRCS_DIR), $(OBJS_DIR), $(SRCS:.c=.d))
