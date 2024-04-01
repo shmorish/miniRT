@@ -6,13 +6,13 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:35:17 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 23:10:01 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/01 23:27:07 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-void	parse_line(char *line)
+static void	parse_line(char *line)
 {
 	if (ft_strncmp(line, "A", 1) == 0)
 		printf("A\n");
@@ -42,6 +42,11 @@ void	input_file(t_data *data, char *argv)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
+		if (ft_strcmp(line, "\n") == 0)
+		{
+			free(line);
+			continue ;
+		}
 		parse_line(line);
 		free(line);
 	}
