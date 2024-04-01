@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 20:26:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 20:35:57 by tsishika         ###   ########.fr       */
+/*   Created: 2024/04/01 20:31:28 by tsishika          #+#    #+#             */
+/*   Updated: 2024/04/01 20:32:35 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "utils.h"
 
-int	main(int argc, char **argv)
+void	print_error(char *str)
 {
-	(void)argv;
-	if (argc != 2)
-	{
-		print_error_and_exit("Usage: ./miniRT [scene.rt]\n");
-		return (1);
-	}
+	ft_putstr_fd("ERROR:", 2);
+	ft_putstr_fd(str, 2);
+}
+
+void	print_perror(char *str)
+{
+	ft_putstr_fd("ERROR:", 2);
+	perror(str);
+}
+
+void	print_error_and_exit(char *str)
+{
+	print_error(str);
+	exit(1);
+}
+
+void	print_perror_and_exit(char *str)
+{
+	print_perror(str);
+	exit(1);
 }

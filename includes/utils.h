@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 20:26:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 20:35:57 by tsishika         ###   ########.fr       */
+/*   Created: 2024/04/01 20:31:51 by tsishika          #+#    #+#             */
+/*   Updated: 2024/04/01 20:35:02 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#ifndef UTILS_H
+# define UTILS_H
 
-int	main(int argc, char **argv)
-{
-	(void)argv;
-	if (argc != 2)
-	{
-		print_error_and_exit("Usage: ./miniRT [scene.rt]\n");
-		return (1);
-	}
-}
+# include <stdio.h>
+# include "libft.h"
+
+// print_error.c
+void	print_error(char *str);
+void	print_perror(char *str);
+void	print_error_and_exit(char *str);
+void	print_perror_and_exit(char *str);
+
+#endif
