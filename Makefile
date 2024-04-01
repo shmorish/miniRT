@@ -37,6 +37,8 @@ re			: fclean all
 
 debug		: re
 
+address		: re
+
 norm :
 	norminette srcs includes libft
 

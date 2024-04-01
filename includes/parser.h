@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:53 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 23:09:20 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 00:43:47 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # define ERR_ARGC "Invalid number of arguments"
 # define ERR_ARGV "Invalid file name"
 # define ERR_UNKNOWN "Invalid object type"
+
+// ambient_lightning.c
+t_ambient_lightning	ambient_lightning(char *line);
 
 // check_argument.c
 void	check_argument(int argc, char **argv);

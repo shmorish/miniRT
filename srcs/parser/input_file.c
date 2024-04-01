@@ -6,16 +6,19 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:35:17 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 23:27:07 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 00:43:28 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static void	parse_line(char *line)
+static void	parse_line(t_data *data, char *line)
 {
+	(void)data;
+	while (ft_isspace(*line))
+		line++;
 	if (ft_strncmp(line, "A", 1) == 0)
-		printf("A\n");
+		data->ambient_lightning = ambient_lightning(line);
 	else if (ft_strncmp(line, "C", 1) == 0)
 		printf("C\n");
 	else if (ft_strncmp(line, "L", 1) == 0)
@@ -47,7 +50,7 @@ void	input_file(t_data *data, char *argv)
 			free(line);
 			continue ;
 		}
-		parse_line(line);
+		parse_line(data, line);
 		free(line);
 	}
 }
