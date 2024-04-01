@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:35:17 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 07:28:13 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:39:21 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ static void	parse_line(t_data *data, char *line)
 	else if (ft_strncmp(line, LIGHT, 1) == 0)
 		data->light = light(&data->is_set, line);
 	else if (ft_strncmp(line, SPHERE, 2) == 0)
-		printf("sp\n");
+		object_list_addback(data->object, object_list_new(SPHERE_TYPE, line));
 	else if (ft_strncmp(line, PLANE, 2) == 0)
-		printf("pl\n");
+		object_list_addback(data->object, object_list_new(PLANE_TYPE, line));
 	else if (ft_strncmp(line, CYLINDER, 2) == 0)
-		printf("cy\n");
+		object_list_addback(data->object, object_list_new(CYLINDER_TYPE, line));
 	else
 		print_error_and_exit(ERR_UNKNOWN);
 }
