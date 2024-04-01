@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:26:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 04:38:04 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:15:29 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ void	test(t_data *data)
 	printf("ratio: %f\n", data->ambient_lightning.ratio);
 	printf("color: %d\n", data->ambient_lightning.color);
 	printf("color: %d %d %d\n", red, green, blue);
-
 	printf("camera\n");
-	printf("origin: %f %f %f\n", data->camera.origin.x, data->camera.origin.y, data->camera.origin.z);
-	printf("direction: %f %f %f\n", data->camera.direction.x, data->camera.direction.y, data->camera.direction.z);
+	printf("origin: %f %f %f\n", data->camera.origin.x,
+		data->camera.origin.y, data->camera.origin.z);
+	printf("direction: %f %f %f\n", data->camera.direction.x,
+		data->camera.direction.y, data->camera.direction.z);
 	printf("fov: %f\n", data->camera.fov);
 }
 

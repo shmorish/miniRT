@@ -6,13 +6,13 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:31:15 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 05:14:15 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:16:08 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-t_camera			camera(t_is_set *is_set, char *line)
+t_camera	camera(t_is_set *is_set, char *line)
 {
 	t_camera		camera;
 	char			**split;
