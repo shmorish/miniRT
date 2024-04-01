@@ -33,6 +33,9 @@ re			: fclean all
 
 debug		: re
 
+norm :
+	norminette srcs includes libft
+
 help		: Makefile
 	@echo "Usage: make [target]"
 	@echo ""
