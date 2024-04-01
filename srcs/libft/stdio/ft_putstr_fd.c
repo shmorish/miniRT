@@ -3,19 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 05:20:30 by shmorish          #+#    #+#             */
-/*   Updated: 2023/08/09 16:42:33 by morishitash      ###   ########.fr       */
+/*   Updated: 2024/02/26 03:16:32 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_stdio.h"
-#include "../includes/ft_string.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+int	ft_putstr_fd(char *str, int fd)
 {
-	if (s == NULL)
-		return ;
-	write(fd, s, ft_strlen(s));
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (ft_putstr_fd("(null)", fd));
+	while (str[i] != '\0')
+		ft_putchar_fd(str[i++], fd);
+	return (i);
 }

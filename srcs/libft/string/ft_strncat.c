@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 10:26:28 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/10 23:56:27 by morishitash      ###   ########.fr       */
+/*   Created: 2024/02/26 09:48:21 by shmorish          #+#    #+#             */
+/*   Updated: 2024/02/26 09:50:43 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_string.h"
 
-static int	ft_strlen(const char *s)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int	i;
+	size_t	i;
+	size_t	dest_len;
 
 	i = 0;
-	while (s[i] != '\0')
+	dest_len = ft_strlen(dest);
+	while (src[i] != '\0' && i < n)
+	{
+		dest[dest_len + i] = src[i];
 		i++;
-	return (i);
-}
-
-int	ft_putstr(char *s)
-{
-	if (s == NULL)
-		return (write(STDOUT_FILENO, "(null)", 6));
-	return (write(STDOUT_FILENO, s, ft_strlen(s)));
+	}
+	dest[dest_len + i] = '\0';
+	return (dest);
 }

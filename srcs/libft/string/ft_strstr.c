@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 14:25:57 by morishitash       #+#    #+#             */
-/*   Updated: 2024/02/26 10:13:42 by shmorish         ###   ########.fr       */
+/*   Created: 2024/02/26 09:55:31 by shmorish          #+#    #+#             */
+/*   Updated: 2024/02/26 09:55:51 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_ctype.h"
+#include "../includes/ft_string.h"
 
-int	ft_isspace(int c)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	return (ft_isblank(c) || (10 <= c && c <= 13));
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (needle[i] == '\0')
+		return ((char *)haystack);
+	while (haystack[i] != '\0')
+	{
+		j = 0;
+		while (needle[j] != '\0' && haystack[i + j] == needle[j])
+			j++;
+		if (needle[j] == '\0')
+			return ((char *)&haystack[i]);
+		i++;
+	}
+	return (NULL);
 }

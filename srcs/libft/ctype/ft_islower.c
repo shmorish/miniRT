@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 14:25:57 by morishitash       #+#    #+#             */
-/*   Updated: 2024/02/26 10:13:42 by shmorish         ###   ########.fr       */
+/*   Created: 2024/02/26 10:00:59 by shmorish          #+#    #+#             */
+/*   Updated: 2024/02/26 10:01:15 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ctype.h"
 
-int	ft_isspace(int c)
+int	ft_islower(int c)
 {
-	return (ft_isblank(c) || (10 <= c && c <= 13));
+	return (c >= 'a' && c <= 'z');
 }

@@ -1,6 +1,6 @@
-#include "parser.h"
+#include "miniRT.h"
 
 void	parser(void)
 {
-	printf("parser!\n");
+	ft_printf("parser!\n");
 }

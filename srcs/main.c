@@ -3,6 +3,6 @@
 int main(void)
 {
 	parser();
-	printf("miniRT!\n");
+	ft_printf("miniRT!\n");
 	return (0);
 }

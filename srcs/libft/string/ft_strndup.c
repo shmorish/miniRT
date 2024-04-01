@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_xmalloc.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 11:31:24 by morishitash       #+#    #+#             */
-/*   Updated: 2024/01/08 11:31:29 by morishitash      ###   ########.fr       */
+/*   Created: 2024/02/26 09:45:15 by shmorish          #+#    #+#             */
+/*   Updated: 2024/02/26 09:46:38 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_stdlib.h"
 #include "../includes/ft_string.h"
-#include "../includes/ft_stdio.h"
 
-void	*ft_xmalloc(size_t size)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	void	*ptr;
+	char	*ret;
+	size_t	i;
 
-	ptr = malloc(size);
-	if (ptr == NULL)
+	i = 0;
+	ret = (char *)malloc(sizeof(char) * (n + 1));
+	if (!ret)
+		return (NULL);
+	while (s1[i] != '\0' && i < n)
 	{
-		ft_putstr_fd("Error\n", 2);
-		exit(EXIT_FAILURE);
+		ret[i] = s1[i];
+		i++;
 	}
-	ft_bzero(ptr, size);
-	return (ptr);
+	ret[i] = '\0';
+	return (ret);
 }

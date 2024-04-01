@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 23:03:15 by morishitash       #+#    #+#             */
-/*   Updated: 2024/01/08 11:32:17 by morishitash      ###   ########.fr       */
+/*   Updated: 2024/02/26 03:21:40 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/ft_stdio.h"
+#include "../includes/ft_string.h"
 
 char	*gnl_strjoin(char *s1, char *s2)
 {
@@ -20,7 +21,7 @@ char	*gnl_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	ret = (char *)ft_xmalloc(sizeof(char) * \
+	ret = (char *)xmalloc(sizeof(char) * \
 		(ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ret)
 	{
@@ -44,7 +45,7 @@ char	*read_buffer(int fd, char **store)
 
 	while (1)
 	{
-		buf = (char *)ft_xmalloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1));
+		buf = (char *)xmalloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1));
 		if (!buf)
 			return (NULL);
 		read_size = read(fd, buf, BUFFER_SIZE);
@@ -74,7 +75,7 @@ char	*concat_to_line(char *store)
 		i++;
 	if (store[i] == '\n')
 		i++;
-	line = (char *)ft_xmalloc(sizeof(char) * (i + 1));
+	line = (char *)xmalloc(sizeof(char) * (i + 1));
 	if (!line)
 	{
 		free(store);
@@ -108,7 +109,7 @@ char	*update_store(char *store)
 		free(store);
 		return (NULL);
 	}
-	new_store = (char *)ft_xmalloc(sizeof(char) * (ft_strlen(store) - i + 1));
+	new_store = (char *)xmalloc(sizeof(char) * (ft_strlen(store) - i + 1));
 	if (!new_store)
 		return (NULL);
 	i++;

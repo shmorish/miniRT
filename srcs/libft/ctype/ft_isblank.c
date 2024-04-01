@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbinary.c                                     :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 19:52:27 by morishitash       #+#    #+#             */
-/*   Updated: 2023/07/18 19:58:02 by morishitash      ###   ########.fr       */
+/*   Created: 2024/02/26 10:06:24 by shmorish          #+#    #+#             */
+/*   Updated: 2024/02/26 10:06:38 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_ctype.h"
 
-int	ft_putbinary(unsigned int nb)
+int	ft_isblank(int c)
 {
-	int	len;
-
-	len = 0;
-	if (nb >= 2)
-		len += ft_putbinary(nb / 2);
-	len += ft_putchar(nb % 2 + '0');
-	return (len);
+	return (c == ' ' || c == '\t');
 }

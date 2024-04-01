@@ -1,6 +1,0 @@
-*.txt
-*.o
-a.out
-gnl*
-.vscode/
-*.dSYM/

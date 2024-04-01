@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 20:20:08 by morishitash       #+#    #+#             */
-/*   Updated: 2023/08/09 17:21:59 by morishitash      ###   ########.fr       */
+/*   Updated: 2024/02/26 03:41:18 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

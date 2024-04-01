@@ -3,26 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stdio.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 10:07:11 by shmorish          #+#    #+#             */
-/*   Updated: 2023/08/09 16:45:37 by morishitash      ###   ########.fr       */
+/*   Updated: 2024/02/26 10:10:38 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STDIO_H
 # define FT_STDIO_H
 
-# include "../stdio/get_next_line/get_next_line.h"
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 2
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
+# endif
+
 # include <stddef.h>
 # include <unistd.h>
+# include <limits.h>
+# include <fcntl.h>
+# include <stdarg.h>
+# include "ft_stdlib.h"
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(const char *s, int fd);
-void	ft_putendl_fd(const char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-
-char	*get_next_line(int fd);
 int		ft_printf(const char *format, ...);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putendl_fd(const char *s, int fd);
+int		ft_putnbr_fd(int num, int fd);
+int		ft_putstr_fd(char *str, int fd);
+int		ft_putunbr_fd(unsigned int num, int fd);
+int		ft_dprintf(int fd, const char *format, ...);
+int		ft_vprintf(const char *format, va_list args);
+int		ft_vdprintf(int fd, const char *format, va_list args);
+char	*get_next_line(int fd);
 
 #endif

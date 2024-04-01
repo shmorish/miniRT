@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
+/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 11:08:13 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/10 17:34:44 by morishitash      ###   ########.fr       */
+/*   Created: 2024/02/26 10:01:58 by shmorish          #+#    #+#             */
+/*   Updated: 2024/02/26 10:02:09 by shmorish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_ctype.h"
 
-int	ft_putchar(char c)
+int	ft_isupper(int c)
 {
-	return (write(STDOUT_FILENO, &c, 1));
+	return (c >= 'A' && c <= 'Z');
 }
