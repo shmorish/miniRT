@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:53 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 05:20:06 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 07:30:11 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@
 # define ERR_CAMERA_ARGC "Camera must have 4 arguments"
 # define ERR_CAMERA_DUPLICATE "Duplicate camera"
 
+// light
+# define ERR_LIGHT_ARGC "Light must have 4 arguments"
+# define ERR_LIGHT_DUPLICATE "Duplicate light"
+
 // ambient_lightning.c
 t_ambient_lightning	ambient_lightning(t_is_set *is_set, char *line);
 
@@ -54,6 +58,9 @@ double				validate_and_parse_double_range(char *str,
 size_t				count_split(char **split);
 void				is_split_count(char **split,
 						size_t expected, char *err_msg);
+
+// light.c
+t_light				light(t_is_set *is_set, char *line);
 
 // input_file.c
 void				input_file(t_data *data, char *argv);

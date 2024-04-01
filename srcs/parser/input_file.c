@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:35:17 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 01:31:34 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 07:28:13 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	parse_line(t_data *data, char *line)
 	else if (ft_strncmp(line, CAMERA, 1) == 0)
 		data->camera = camera(&data->is_set, line);
 	else if (ft_strncmp(line, LIGHT, 1) == 0)
-		printf("L\n");
+		data->light = light(&data->is_set, line);
 	else if (ft_strncmp(line, SPHERE, 2) == 0)
 		printf("sp\n");
 	else if (ft_strncmp(line, PLANE, 2) == 0)
