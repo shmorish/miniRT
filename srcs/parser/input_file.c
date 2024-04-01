@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:35:17 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 01:11:04 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 01:27:50 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	parse_line(t_data *data, char *line)
 	while (ft_isspace(*line))
 		line++;
 	if (ft_strncmp(line, AMBIENT_LIGHTNING, 1) == 0)
-		data->ambient_lightning = ambient_lightning(line);
+		data->ambient_lightning = ambient_lightning(&data->is_set, line);
 	else if (ft_strncmp(line, CAMERA, 1) == 0)
 		printf("C\n");
 	else if (ft_strncmp(line, LIGHT, 1) == 0)
