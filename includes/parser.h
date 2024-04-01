@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:53 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 05:17:18 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:20:06 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 # define ERR_UNKNOWN "Invalid object type"
 
 // ambient_lightning
-# define ERR_AL_RATIO "Ambient lightning ratio must be between 0 and 1"
 # define ERR_AL_ARGC "Ambient lightning must have 3 arguments"
 # define ERR_AL_DUPLICATE "Duplicate ambient lightning"
 
