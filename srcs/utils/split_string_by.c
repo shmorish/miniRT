@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   split_string_by_whitespace.c                       :+:      :+:    :+:   */
+/*   split_string_by.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 00:10:00 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 01:04:57 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 04:21:21 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ char	**split_string_by_whitespace(char *line)
 	return (split);
 }
 
-size_t	count_split(char **split)
+char	**split_string_by_comma(char *line)
 {
-	size_t	i;
+	char	**split;
 
-	i = 0;
-	while (split[i])
-		i++;
-	return (i);
+	split = ft_split(line, ',');
+	if (split == NULL)
+		print_error_and_exit(ERR_MALLOC);
+	return (split);
 }
 
 void	free_split(char **split)

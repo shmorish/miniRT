@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   camera.c                                           :+:      :+:    :+:   */
+/*   is_split_count.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 01:31:15 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 04:18:47 by tsishika         ###   ########.fr       */
+/*   Created: 2024/04/02 04:23:51 by tsishika          #+#    #+#             */
+/*   Updated: 2024/04/02 04:27:00 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-t_camera			camera(t_is_set *is_set, char *line)
+size_t	count_split(char **split)
 {
-	t_camera		camera;
-	char			**split;
-	size_t			cnt;
+	size_t	i;
 
-	if (is_set->camera == true)
-		print_error_and_exit(ERR_CAMERA_DUPLICATE);
-	split = split_string_by_whitespace(line);
+	i = 0;
+	while (split[i])
+		i++;
+	return (i);
+}
+
+void	is_split_count(char **split, size_t expected, char *err_msg)
+{
+	size_t	cnt;
+
 	cnt = count_split(split);
-	if (cnt != 4)
-		print_error_and_exit(ERR_CAMERA_ARGC);
-	camera.origin = parse_vector(split[1]);
-	camera.direction = parse_vector(split[2]);
-	camera.fov = ft_atof(split[3]);
-	free_split(split);
-	is_set->camera = true;
-	return (camera);
+	if (cnt != expected)
+		print_error_and_exit(err_msg);
 }

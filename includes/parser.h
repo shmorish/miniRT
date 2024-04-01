@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:53 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 04:15:52 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 04:47:26 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,28 @@ t_camera			camera(t_is_set *is_set, char *line);
 // check_argument.c
 void				check_argument(int argc, char **argv);
 
+// double.c
+bool				is_double(char *str);
+double				validate_and_parse_double(char *str);
+
+// is_split_count.c
+size_t	count_split(char **split);
+void	is_split_count(char **split, size_t expected, char *err_msg);
+
 // input_file.c
 void				input_file(t_data *data, char *argv);
+
+// is_in_range.c
+bool				is_in_range_double(double value, double min, double max);
+bool				is_in_range_int(int value, int min, int max);
 
 // parser.c
 void				parser(t_data *data, int argc, char **argv);
 
 // rgb.c
-int		validate_and_parse_rgb(char *str);
+int					validate_and_parse_rgb(char *str);
+
+// vector.c
+t_vector			parse_vector(char *str);
 
 #endif

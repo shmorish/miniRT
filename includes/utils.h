@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:31:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 04:15:45 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 04:25:27 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	print_error_and_exit(char *str);
 void	print_perror_and_exit(char *str);
 void	print_error_with_context_and_exit(char *str1, char *str2);
 
-// split_string_by_whitespace.c
+// split_string_by.c
 char	**split_string_by_whitespace(char *line);
-size_t	count_split(char **split);
+char	**split_string_by_comma(char *line);
 void	free_split(char **split);
 
 #endif
