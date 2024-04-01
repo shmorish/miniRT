@@ -1,4 +1,4 @@
-#include "../../includes/parser.h"
+#include "parser.h"
 
 void	parser(void)
 {
