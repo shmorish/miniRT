@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:26:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 08:44:50 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:51:15 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	print_light(t_data *data)
 
 void	print_sphere(t_sphere *sphere)
 {
-	const int 	red = sphere->color >> 16 & 0xFF;
+	const int	red = sphere->color >> 16 & 0xFF;
 	const int	green = sphere->color >> 8 & 0xFF;
 	const int	blue = sphere->color & 0xFF;
 
@@ -111,7 +111,6 @@ void	print_object(t_data *data)
 			print_error_and_exit(ERR_UNKNOWN);
 		node = node->next;
 	}
-
 }
 
 int	main(int argc, char **argv)
@@ -123,6 +122,7 @@ int	main(int argc, char **argv)
 	print_camera(&data);
 	print_light(&data);
 	print_object(&data);
+	free_object_list(data.object);
 }
 
 // int main()

@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 07:46:36 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 08:43:15 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:49:37 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,35 @@ void	object_list_addback(t_object *head, t_object *newnode)
 	lastnode->next = newnode;
 	newnode->next = NULL;
 }
+
+void	free_object_list(t_object *head)
+{
+	t_object	*node;
+	t_object	*tmp;
+
+	node = head->next;
+	while (node != NULL)
+	{
+		tmp = node;
+		node = node->next;
+		free(tmp->object_data);
+		free(tmp);
+	}
+	free(head);
+}
+
+// void	objs_free(t_objs *head)
+// {
+// 	t_objs	*node;
+// 	t_objs	*tmp;
+
+// 	node = head->next;
+// 	while (node != head)
+// 	{
+// 		tmp = node;
+// 		node = node->next;
+// 		free(tmp->obj);
+// 		free(tmp);
+// 	}
+// 	free(head);
+// }

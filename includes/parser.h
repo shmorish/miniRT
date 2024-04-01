@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:53 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 08:37:11 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:49:50 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ t_object			*object_list_head(void);
 t_object			*object_list_new(t_object_type type, char *line);
 t_object			*object_list_last_node(t_object *head);
 void				object_list_addback(t_object *head, t_object *newnode);
+void				free_object_list(t_object *head);
 
 // input_file.c
 void				input_file(t_data *data, char *argv);
