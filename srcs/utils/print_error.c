@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:31:28 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 20:49:10 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/01 21:08:24 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	print_error(char *str)
 {
 	ft_putstr_fd("ERROR: ", 2);
 	ft_putstr_fd(str, 2);
+	ft_putchar_fd('\n', 2);
 }
 
 void	print_perror(char *str)

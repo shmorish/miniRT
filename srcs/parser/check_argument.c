@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:40:34 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 21:05:17 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/01 21:10:02 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static bool	check_argument_file_name(char *argv)
 void	check_argument(int argc, char **argv)
 {
 	if (!check_argument_count(argc))
-		print_error_and_exit("Invalid argument count\n");
+		print_error_and_exit(ERR_ARGC);
 	if (!check_argument_file_name(argv[1]))
-		print_error_and_exit("Invalid file name\n");
+		print_error_and_exit(ERR_ARGV);
 }
 
