@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 21:18:16 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 21:19:14 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/01 21:26:50 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_and_exit_if_directory(char *file)
 	if (0 <= fd)
 	{
 		close(fd);
-		print_perror_and_exit(file);
+		print_error_with_context_and_exit(file, ERR_DIRECTORY);
 	}
 }
 
