@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:53 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 04:47:26 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:13:31 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void				check_argument(int argc, char **argv);
 // double.c
 bool				is_double(char *str);
 double				validate_and_parse_double(char *str);
+double				validate_and_parse_double_range(char *str, double min, double max);
 
 // is_split_count.c
 size_t	count_split(char **split);
@@ -67,6 +68,7 @@ void				parser(t_data *data, int argc, char **argv);
 int					validate_and_parse_rgb(char *str);
 
 // vector.c
-t_vector			parse_vector(char *str);
+t_vector			validate_and_parse_vector(char *str);
+t_vector			validate_and_parse_vector_range(char *str, double min, double max);
 
 #endif
