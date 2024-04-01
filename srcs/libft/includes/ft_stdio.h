@@ -30,6 +30,7 @@
 
 int		ft_printf(const char *format, ...);
 int		ft_putchar_fd(char c, int fd);
+int     ft_putdbl_fd(double num, int fd);
 int		ft_putendl_fd(const char *s, int fd);
 int		ft_putnbr_fd(int num, int fd);
 int		ft_putstr_fd(char *str, int fd);
