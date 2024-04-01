@@ -39,7 +39,7 @@ debug		: re
 
 address		: re
 
-norm :
+norm		:
 	norminette srcs includes libft
 
 help		: Makefile
