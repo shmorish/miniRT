@@ -36,5 +36,5 @@ int	ft_dprintf(int fd, const char *format, ...)
 
 int	ft_vprintf(const char *format, va_list args)
 {
-	return (ft_vdprintf(1, format, args));
+	return (ft_vdprintf(STDOUT_FILENO, format, args));
 }

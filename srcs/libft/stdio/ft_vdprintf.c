@@ -76,6 +76,8 @@ static int	sort_format(int fd, va_list args, const char format)
 		return (ft_putunbr_fd(va_arg(args, unsigned int), fd));
 	else if (format == 'x' || format == 'X')
 		return (ft_puthex(va_arg(args, unsigned int), (format == 'X'), fd));
+	else if (format == 'f')
+		return (ft_putdbl_fd(va_arg(args, double), fd));
 	else if (format == '%')
 		return (ft_putchar_fd('%', fd));
 	return (0);
