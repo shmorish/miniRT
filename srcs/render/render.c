@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 03:18:14 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/03 04:10:31 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:21:04 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	draw(t_data *data)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < WINDOW_HEIGHT)
@@ -23,12 +23,13 @@ static int	draw(t_data *data)
 		x = 0;
 		while (x < WINDOW_WIDTH)
 		{
-			my_mlx_pixel_put(data->mlx, x, y, 0x00FF0000);
+			my_mlx_pixel_put(data->mlx, x, y, 0xE3E366);
 			x++;
 		}
 		y++;
 	}
-	mlx_put_image_to_window(data->mlx->mlx, data->mlx->win, data->mlx->img_ptr, 0, 0);
+	mlx_put_image_to_window(data->mlx->mlx,
+		data->mlx->win, data->mlx->img_ptr, 0, 0);
 	return (0);
 }
 
