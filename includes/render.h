@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 03:18:31 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/03 03:28:30 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/03 03:49:55 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,10 @@
 
 // my_mlx_init.c
 void	my_mlx_init(t_data *data);
+
+// my_mlx_pixel_put.c
+
+// render.c
+void	render(t_data *data);
 
 #endif

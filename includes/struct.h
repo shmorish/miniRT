@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:08:19 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/03 03:23:25 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/03 03:37:22 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ struct s_mlx
 	void	*img_ptr;
 	char	*addr;
 	int		bits_per_pixel;
-	int		size_line;
+	int		line_length;
 	int		endian;
 	int		width;
 	int		height;

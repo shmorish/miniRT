@@ -14,18 +14,18 @@
 
 int	ft_putdbl_fd(double num, int fd)
 {
-    int	len;
+	int	len;
 
-    len = 0;
-    if (num < 0)
-    {
-        len = ft_putchar_fd('-', fd);
-        num = -num;
-    }
-    len += ft_putnbr_fd((int)num, fd);
-    len += ft_putchar_fd('.', fd);
-    num -= (int)num;
-    num *= 1000000;
-    len += ft_putnbr_fd((int)num, fd);
-    return (len);
+	len = 0;
+	if (num < 0)
+	{
+		len = ft_putchar_fd('-', fd);
+		num = -num;
+	}
+	len += ft_putnbr_fd((int)num, fd);
+	len += ft_putchar_fd('.', fd);
+	num -= (int)num;
+	num *= 1000000;
+	len += ft_putnbr_fd((int)num, fd);
+	return (len);
 }
