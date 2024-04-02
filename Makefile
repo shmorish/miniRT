@@ -53,6 +53,6 @@ help		: Makefile
 	@echo "  debug		- build $(NAME) with debug flag"
 	@echo "  help		- show this help"
 
-.PHONY		: all clean fclean re debug help
+.PHONY		: all clean fclean re debug address help
 
 -include $(DEPS)
