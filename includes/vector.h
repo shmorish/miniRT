@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 02:29:27 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/05 02:36:52 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/05 02:48:34 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,20 @@ t_vector	addition(t_vector a, t_vector b);
 // cross_product.c
 t_vector	cross_product(t_vector a, t_vector b);
 
+// distance.c
+double		distance(t_vector a, t_vector b);
+
 // division.c
 t_vector	division(t_vector a, t_vector b);
 
 // dot_product.c
 double		dot_product(t_vector a, t_vector b);
+
+// magnitude_squared.c
+double		magnitude_squared(t_vector v);
+
+// magnitude.c
+double		magnitude(t_vector a);
 
 // multiplication.c
 t_vector	multiplication(t_vector a, t_vector b);
