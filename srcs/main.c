@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:26:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 08:51:15 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:20:12 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,15 +122,9 @@ int	main(int argc, char **argv)
 	print_camera(&data);
 	print_light(&data);
 	print_object(&data);
+	render(&data);
 	free_object_list(data.object);
 }
-
-// int main()
-// {
-// 	data_init
-// 	parser
-// 	render
-// }
 
 #ifdef DEBUG
 

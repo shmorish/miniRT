@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:08:19 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 08:37:33 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/03 03:37:22 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_plane				t_plane;
 typedef struct s_cylinder			t_cylinder;
 typedef struct s_object				t_object;
 typedef struct s_is_set				t_is_set;
+typedef struct s_mlx				t_mlx;
 typedef struct s_data				t_data;
 
 enum e_object_type
@@ -33,6 +34,12 @@ enum e_object_type
 	PLANE_TYPE,
 	SPHERE_TYPE,
 	CYLINDER_TYPE,
+};
+
+enum e_window_size
+{
+	WINDOW_WIDTH	= 800,
+	WINDOW_HEIGHT	= 600,
 };
 
 struct s_rgb
@@ -106,6 +113,19 @@ struct s_is_set
 	bool	light;
 };
 
+struct s_mlx
+{
+	void	*mlx;
+	void	*win;
+	void	*img_ptr;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
+};
+
 struct s_data
 {
 	t_ambient_lightning	ambient_lightning;
@@ -113,6 +133,7 @@ struct s_data
 	t_light				light;
 	t_object			*object;
 	t_is_set			is_set;
+	t_mlx				*mlx;
 };
 
 #endif

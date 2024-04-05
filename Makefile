@@ -1,5 +1,5 @@
 NAME		:= miniRT
-INC			:= $(shell find . -name "*.h" -exec dirname {} \; | sort -u | sed 's/^/-I /')
+INC			:= $(shell find . -name "*.h" -exec dirname {} \; | sort -u | sed 's/^/-I /') -I ./mlx
 SRCS_DIR	:= ./srcs
 SRCS		:= $(shell find . -name "*.c" | grep -v mlx)
 OBJS_DIR	:= ./objs
@@ -21,16 +21,19 @@ endif
 all			: $(NAME)
 
 $(NAME)	: $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(MAKE) -C ./mlx
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L./mlx -lmlx -framework OpenGL -framework AppKit
 
 $(OBJS_DIR)/%.o: srcs/%.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean		:
+	make -C ./mlx fclean
 	rm -rf $(OBJS_DIR)
 
 fclean		: clean
+	make -C ./mlx fclean
 	$(RM) $(NAME)
 
 re			: fclean all

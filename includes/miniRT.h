@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:27:50 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/01 23:09:06 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/03 03:33:50 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # include <stdbool.h>
 # include <time.h>
 
+# include "render.h"
 # include "struct.h"
 # include "libft.h"
 # include "parser.h"
