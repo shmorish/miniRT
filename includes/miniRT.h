@@ -38,5 +38,6 @@
 # include "libft.h"
 # include "parser.h"
 # include "utils.h"
+# include "vector.h"
 
 #endif
