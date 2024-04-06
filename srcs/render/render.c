@@ -14,8 +14,9 @@
 
 static int	draw(t_data *data)
 {
-	int	x;
-	int	y;
+	int			x;
+	int			y;
+	t_vector	camera_ray;
 
 	y = 0;
 	while (y < WINDOW_HEIGHT)
@@ -23,6 +24,7 @@ static int	draw(t_data *data)
 		x = 0;
 		while (x < WINDOW_WIDTH)
 		{
+			camera_ray = getCameraRay(data, x, y);
 			my_mlx_pixel_put(data->mlx, x, y, 0xE3E366);
 			x++;
 		}
