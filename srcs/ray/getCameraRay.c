@@ -8,6 +8,11 @@ t_vector    normalize(t_vector v)
     return ((t_vector){v.x / magnitude, v.y / magnitude, v.z / magnitude});
 }
 
+double  deg_to_rad(double degrees)
+{
+    return (degrees * M_PI / 180);
+}
+
 t_vector	getCameraRay(t_data *data, int x, int y)
 {
     t_vector	camera_ray;

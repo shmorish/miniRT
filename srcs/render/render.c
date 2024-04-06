@@ -24,7 +24,9 @@ static int	draw(t_data *data)
 		x = 0;
 		while (x < WINDOW_WIDTH)
 		{
+			(void)camera_ray;
 			camera_ray = getCameraRay(data, x, y);
+
 			my_mlx_pixel_put(data->mlx, x, y, 0xE3E366);
 			x++;
 		}
