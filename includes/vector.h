@@ -39,6 +39,9 @@ double		magnitude(t_vector a);
 // multiplication.c
 t_vector	multiplication(t_vector a, t_vector b);
 
+// scale.c
+t_vector	scale(t_vector a, double scale);
+
 // subtraction.c
 t_vector	subtraction(t_vector a, t_vector b);
 

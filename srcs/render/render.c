@@ -26,8 +26,8 @@ static int	draw(t_data *data)
 		{
 			(void)camera_ray;
 			camera_ray = getCameraRay(data, x, y);
-
-			my_mlx_pixel_put(data->mlx, x, y, 0xE3E366);
+			put_pixel(data, camera_ray, x, y);
+			// my_mlx_pixel_put(data->mlx, x, y, 0xE3E366);
 			x++;
 		}
 		y++;
