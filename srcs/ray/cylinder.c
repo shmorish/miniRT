@@ -14,7 +14,7 @@ static bool	check_cylinder_cross(double dot, double height, double t)
 		return (false);
 }
 // 交点までの距離
-static double	caluculateRayLength(t_cylinder *cylinder, t_cylinder_ray ray_cylinder, t_tmp t)
+static double	caluculateRayLength(t_cylinder *cylinder, t_cylinder_ray ray_cylinder, t_quadratic_equation t)
 {
 	if (check_cylinder_cross(dot_product(ray_cylinder.ray_t1, cylinder->direction), cylinder->height, t.t1))
 		t.t = t.t1;
@@ -26,19 +26,19 @@ static double	caluculateRayLength(t_cylinder *cylinder, t_cylinder_ray ray_cylin
 	return (t.t);
 }
 
-static t_cylinder_ray	get_cylinder_ray(t_vector start_pos, t_cylinder *cylinder, t_tmp t, t_vector camera_ray)
+static t_cylinder_ray	get_cylinder_ray(t_vector start_pos, t_cylinder *cylinder, t_quadratic_equation t, t_vector camera_ray)
 {
 	t_cylinder_ray	ray;
 
-	ray.ray_t1 = subtraction(addition(start_pos, scale(camera_ray, t.t1)), cylinder->coordinate);
-	ray.ray_t2 = subtraction(addition(start_pos, scale(camera_ray, t.t2)), cylinder->coordinate);
+	ray.ray_t1 = subtraction(rayObjCrossPos(start_pos, t.t1, camera_ray), cylinder->coordinate);
+	ray.ray_t2 = subtraction(rayObjCrossPos(start_pos, t.t2, camera_ray), cylinder->coordinate);
 	return (ray);
 }
 
 
 double	hit_cylinder(t_vector ray, t_vector start_pos, t_cylinder *cylinder)
 {
-	t_tmp		t;
+	t_quadratic_equation		t;
 	t_cylinder_ray	ray_cylinder;
 
 	t.a = magnitude_squared(cross_product(ray, cylinder->direction));

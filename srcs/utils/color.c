@@ -10,9 +10,15 @@ t_rgb    integer_to_rgb(int color)
     return (rgb);
 }
 
+int  transColor(int red, int green, int blue)
+{
+    return ((red << 16) | (green << 8) | blue);
+}
+
 #define COLOR 255.0 /* colorの範囲 */
 
 double	color_to_fcolor(double color)
 {
 	return (color / COLOR);
 }
+

@@ -14,5 +14,6 @@ t_vector getCoordinates(void *obj_data, t_object_type type);
 t_vector	get_normal_cylinder(t_vector intersection_pos, t_object *node);
 double	objectCollotion(t_vector start_pos, t_object *head, t_vector ray, t_object **obj);
 double	hit_sphere(t_vector ray, t_vector camera_pos, t_vector obj_pos, double radius);
+t_vector	rayObjCrossPos(t_vector camera_pos, double t, t_vector ray);
 
 #endif

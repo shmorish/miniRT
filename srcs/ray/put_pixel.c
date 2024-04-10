@@ -1,10 +1,5 @@
 #include "miniRT.h"
 
-static int  transColor(int red, int green, int blue)
-{
-    return ((red << 16) | (green << 8) | blue);
-}
-
 static double	lengthFromObject(double current_t, double t, t_object *node, t_object **obj)
 {
 	if (t < 0.0)

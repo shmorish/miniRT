@@ -39,7 +39,7 @@ static t_screen screen_init(int x, int y, t_data *data)
 t_vector	getCameraRay(t_data *data, int x, int y)
 {
     const t_screen  screen = screen_init(x, y, data);
-    const t_vector  camera_dir = addition(data->camera.coordinate, scale(data->camera.direction, screen.camera_to_screen));
-    const t_vector  coordinate = addition(addition(camera_dir, scale(screen.screen_x, screen.f_x)), scale(screen.screen_y, screen.f_y));
+    const t_vector  camera_dir = rayObjCrossPos(data->camera.coordinate, screen.camera_to_screen, data->camera.direction);
+    const t_vector  coordinate = rayObjCrossPos(rayObjCrossPos(camera_dir, screen.f_x, screen.screen_x), screen.f_y, screen.screen_y);
     return (subtraction(coordinate, data->camera.coordinate));
 }

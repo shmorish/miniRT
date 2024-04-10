@@ -41,5 +41,6 @@ void	free_split(char **split);
 // color.c
 t_rgb    integer_to_rgb(int color);
 double	color_to_fcolor(double color);
+int  transColor(int red, int green, int blue);
 
 #endif

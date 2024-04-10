@@ -28,7 +28,7 @@ typedef struct s_object				t_object;
 typedef struct s_is_set				t_is_set;
 typedef struct s_mlx				t_mlx;
 typedef struct s_data				t_data;
-typedef struct s_tmp				t_tmp;
+typedef struct s_quadratic_equation				t_quadratic_equation;
 
 enum e_object_type
 {
@@ -97,7 +97,7 @@ struct s_plane
 };
 
 // なんとかする
-struct s_tmp
+struct s_quadratic_equation
 {
 	double	a;
 	double	b;
@@ -115,7 +115,7 @@ struct s_cylinder
 	double		diameter;
 	double		height;
 	int			color;
-	t_tmp		t;
+	t_quadratic_equation		t;
 };
 
 struct s_object
