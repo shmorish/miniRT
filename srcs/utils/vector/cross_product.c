@@ -12,6 +12,7 @@
 
 #include "miniRT.h"
 
+// 外積の計算
 t_vector	cross_product(t_vector a, t_vector b)
 {
 	t_vector	result;

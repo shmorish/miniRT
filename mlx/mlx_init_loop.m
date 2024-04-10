@@ -113,7 +113,7 @@ void mlx_loop(mlx_ptr_t *mlx_ptr)
 }
 
 
-void mlx_pixel_put(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, int x, int y, int color)
+void mlxPixel_put(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, int x, int y, int color)
 {
   if (!win_ptr->pixmgt)
     return ;

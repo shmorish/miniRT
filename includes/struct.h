@@ -16,6 +16,7 @@
 typedef enum e_object_type			t_object_type;
 
 typedef struct s_rgb				t_rgb;
+typedef struct s_float_rgb			t_float_rgb;
 typedef struct s_vector				t_vector;
 typedef struct s_ambient_lightning	t_ambient_lightning;
 typedef struct s_camera				t_camera;
@@ -27,6 +28,7 @@ typedef struct s_object				t_object;
 typedef struct s_is_set				t_is_set;
 typedef struct s_mlx				t_mlx;
 typedef struct s_data				t_data;
+typedef struct s_quadratic_equation				t_quadratic_equation;
 
 enum e_object_type
 {
@@ -36,13 +38,17 @@ enum e_object_type
 	CYLINDER_TYPE,
 };
 
-enum e_window_size
-{
-	WINDOW_WIDTH	= 800,
-	WINDOW_HEIGHT	= 600,
-};
+# define WINDOW_WIDTH	800.0
+# define WINDOW_HEIGHT	600.0
 
 struct s_rgb
+{
+	int	red;
+	int	green;
+	int	blue;
+};
+
+struct s_float_rgb
 {
 	int	red;
 	int	green;
@@ -90,6 +96,18 @@ struct s_plane
 	int			color;
 };
 
+// なんとかする
+struct s_quadratic_equation
+{
+	double	a;
+	double	b;
+	double	c;
+	double	d;
+	double	t;
+	double	t1;
+	double	t2;
+};
+
 struct s_cylinder
 {
 	t_vector	coordinate;
@@ -97,6 +115,7 @@ struct s_cylinder
 	double		diameter;
 	double		height;
 	int			color;
+	t_quadratic_equation		t;
 };
 
 struct s_object

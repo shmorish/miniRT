@@ -34,10 +34,20 @@ double		dot_product(t_vector a, t_vector b);
 double		magnitude_squared(t_vector v);
 
 // magnitude.c
-double		magnitude(t_vector a);
+double		magnitude(t_vector v);
+
+// normalize.c
+t_vector	normalize(t_vector v);
 
 // multiplication.c
 t_vector	multiplication(t_vector a, t_vector b);
+
+// normalize.c
+t_vector	normalize(t_vector v);
+
+// scale.c
+t_vector	scale(t_vector v, double scale);
+t_rgb       scale_rgb(t_rgb v, double scale);
 
 // subtraction.c
 t_vector	subtraction(t_vector a, t_vector b);

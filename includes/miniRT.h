@@ -39,5 +39,6 @@
 # include "parser.h"
 # include "utils.h"
 # include "vector.h"
+# include "ray.h"
 
 #endif
