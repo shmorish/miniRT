@@ -46,11 +46,9 @@ double	hit_cylinder(t_vector ray, t_vector start_pos, t_cylinder *cylinder)
 		return (-1.0);
 	t.b = 2.0 * (dot_product(cross_product(ray, cylinder->direction), cross_product(subtraction(start_pos, cylinder->coordinate), cylinder->direction)));
 	t.c = magnitude_squared(cross_product(subtraction(start_pos, cylinder->coordinate), cylinder->direction)) - pow(cylinder->diameter / 2.0, 2.0);
-	t.d = pow(t.b, 2.0) - (4.0 * t.a * t.c);
-	if (t.d == 0)
-		t.t = (-(t.b) / (2.0 * t.a));
-	t.t1 = (-(t.b) - sqrt(pow(t.b, 2.0) - (t.a * t.c * 4.0))) / (t.a * 2.0);
-	t.t2 = (-(t.b) + sqrt(pow(t.b, 2.0) - (t.a * t.c * 4.0))) / (t.a * 2.0);
+	t.d = pow(t.b, 2.0) - (t.a * t.c * 4.0);
+	t.t1 = (-(t.b) - sqrt(t.d)) / (t.a * 2.0);
+	t.t2 = (-(t.b) + sqrt(t.d)) / (t.a * 2.0);
 	ray_cylinder = get_cylinder_ray(start_pos, cylinder, t, ray);
 	return (caluculateRayLength(cylinder, ray_cylinder, t));
 }
@@ -65,7 +63,7 @@ t_vector	get_normal_cylinder(t_vector intersection_pos, t_object *node)
 	intersection_sub_coordinate = subtraction(intersection_pos, cylinder->coordinate);
 	dot_direction = scale(cylinder->direction, dot_product(intersection_sub_coordinate, cylinder->direction));
 	if (cylinder->t.t == cylinder->t.t1)
-		return (scale(subtraction(intersection_sub_coordinate, dot_direction), 1.0 / magnitude(subtraction(intersection_sub_coordinate, dot_direction))));
+		return (scale(subtraction(intersection_sub_coordinate, dot_direction), 1.0 / distance(intersection_sub_coordinate, dot_direction)));
 	else
-		return (scale(subtraction(dot_direction, intersection_sub_coordinate), 1.0 / magnitude(subtraction(dot_direction, intersection_sub_coordinate))));
+		return (scale(subtraction(dot_direction, intersection_sub_coordinate), 1.0 / distance(dot_direction, intersection_sub_coordinate)));
 }

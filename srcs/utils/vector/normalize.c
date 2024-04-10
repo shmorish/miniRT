@@ -2,12 +2,8 @@
 
 t_vector	normalize(t_vector v)
 {
-	double          mag;
-	t_vector		result;
+	const double	mag = magnitude(v);
+	const t_vector	mag_v = {mag, mag, mag};
 
-    mag = magnitude(v);
-	result.x = v.x / mag;
-	result.y = v.y / mag;
-	result.z = v.z / mag;
-	return (result);
+	return (division(v, mag_v));
 }

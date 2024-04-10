@@ -38,4 +38,8 @@ char	**split_string_by_whitespace(char *line);
 char	**split_string_by_comma(char *line);
 void	free_split(char **split);
 
+// color.c
+t_rgb    integer_to_rgb(int color);
+double	color_to_fcolor(double color);
+
 #endif

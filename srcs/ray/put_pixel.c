@@ -19,12 +19,16 @@ static double	lengthFromObject(double current_t, double t, t_object *node, t_obj
 
 t_vector getCoordinates(void *obj_data, t_object_type type)
 {
-	if (type == PLANE_TYPE)
-		return ((t_plane *)obj_data)->coordinate;
-	else if (type == SPHERE_TYPE)
-		return ((t_sphere *)obj_data)->coordinate;
-	else if (type == CYLINDER_TYPE)
-		return ((t_cylinder *)obj_data)->coordinate;
+	if (obj_data != NULL)
+	{
+		if (type == PLANE_TYPE)
+			return ((t_plane *)obj_data)->coordinate;
+		else if (type == SPHERE_TYPE)
+			return ((t_sphere *)obj_data)->coordinate;
+		else if (type == CYLINDER_TYPE)
+			return ((t_cylinder *)obj_data)->coordinate;
+	}
+	ft_dprintf(STDERR_FILENO, "error occered file:[%s] line:[%d]\n", __FILE__, __LINE__);
 	return ((t_vector){0, 0, 0});
 }
 
