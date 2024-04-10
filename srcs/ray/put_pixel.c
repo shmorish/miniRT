@@ -12,7 +12,7 @@ static double	lengthFromObject(double current_t, double t, t_object *node, t_obj
 	return (current_t);
 }
 
-t_vector getCoordinates(void *obj_data, t_object_type type)
+t_vector	getCoordinates(void *obj_data, t_object_type type)
 {
 	if (obj_data != NULL)
 	{
@@ -49,17 +49,17 @@ double	objectCollotion(t_vector start_pos, t_object *object, t_vector ray, t_obj
 	return (t);
 }
 
-void    put_pixel(t_data *data, t_vector camera, int x, int y)
+void	put_pixel(t_data *data, t_vector camera, int x, int y)
 {
-    t_object        *object;
-	t_float_rgb     shine;
+	t_object		*object;
+	t_float_rgb		shine;
 	const t_vector	coordinate = data->camera.coordinate;
 	const double	t = objectCollotion(coordinate, data->object, camera, &object);
 
 	if (t >= 0.0)
 	{
 		shine = getShineRate(data, object, camera, t);
-		mlxPixel(data->mlx, x, y, transColor(shine.red, shine.green, shine.blue));
+		mlxPixel(data->mlx, x, y, trans_color(shine.red, shine.green, shine.blue));
 	}
 	else
 		mlxPixel(data->mlx, x, y, data->ambient_lightning.color);

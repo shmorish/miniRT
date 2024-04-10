@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   getShineRate.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/10 23:51:01 by tsishika          #+#    #+#             */
+/*   Updated: 2024/04/10 23:52:03 by tsishika         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "miniRT.h"
 
 #define DIFFUSE_REFLECTION 0.69f /* 拡散反射係数 */
@@ -15,13 +27,12 @@ static double	constrain(double n, double min, double max)
 	return (n);
 }
 
-
 static int	colorMatrixWithLightReflectionAndAmbientLight(int color, int ambient_light_radiance, double light_diffuse_radiance, double light_specular_reflection_radiance)
 {
-	const double min = 0.0;
-	const double max = 1.0;
-	double constrain_rate;
-	double	light;
+	const double	min = 0.0;
+	const double	max = 1.0;
+	double			constrain_rate;
+	double			light;
 
 	light = light_diffuse_radiance + color_to_fcolor(ambient_light_radiance) + light_specular_reflection_radiance;
 	constrain_rate = constrain(light, min, max);
@@ -115,7 +126,7 @@ double	get_incidence_dot(t_data *data, t_object *node, t_vector ray, double t)
 }
 
 #define C_EPSILON 512.0
-#define C_1_EPSILON (1 / C_EPSILON) 
+#define C_1_EPSILON (1 / C_EPSILON)
 
 double	shadow_res(t_data *data, t_vector shadow_ray, t_vector intersection_pos)
 {

@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 02:29:27 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/05 02:48:34 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:53:53 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_vector	normalize(t_vector v);
 
 // scale.c
 t_vector	scale(t_vector v, double scale);
-t_rgb       scale_rgb(t_rgb v, double scale);
+t_rgb		scale_rgb(t_rgb v, double scale);
 
 // subtraction.c
 t_vector	subtraction(t_vector a, t_vector b);

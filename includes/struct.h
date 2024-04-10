@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:08:19 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/03 03:37:22 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:56:40 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_object				t_object;
 typedef struct s_is_set				t_is_set;
 typedef struct s_mlx				t_mlx;
 typedef struct s_data				t_data;
-typedef struct s_quadratic_equation				t_quadratic_equation;
+typedef struct s_quadratic_equation	t_quadratic_equation;
 
 enum e_object_type
 {
@@ -110,12 +110,12 @@ struct s_quadratic_equation
 
 struct s_cylinder
 {
-	t_vector	coordinate;
-	t_vector	direction;
-	double		diameter;
-	double		height;
-	int			color;
-	t_quadratic_equation		t;
+	t_vector				coordinate;
+	t_vector				direction;
+	double					diameter;
+	double					height;
+	int						color;
+	t_quadratic_equation	t;
 };
 
 struct s_object
