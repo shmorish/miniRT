@@ -14,7 +14,7 @@ static bool	check_cylinder_cross(double dot, double height, double t)
 		return (false);
 }
 // 交点までの距離
-static double	_calc_t(t_cylinder *cylinder, t_cylinder_ray ray_cylinder, t_tmp t)
+static double	caluculateRayLength(t_cylinder *cylinder, t_cylinder_ray ray_cylinder, t_tmp t)
 {
 	if (check_cylinder_cross(dot_product(ray_cylinder.ray_t1, cylinder->direction), cylinder->height, t.t1))
 		t.t = t.t1;
@@ -52,7 +52,7 @@ double	hit_cylinder(t_vector ray, t_vector start_pos, t_cylinder *cylinder)
 	t.t1 = (-(t.b) - sqrt(pow(t.b, 2.0) - (t.a * t.c * 4.0))) / (t.a * 2.0);
 	t.t2 = (-(t.b) + sqrt(pow(t.b, 2.0) - (t.a * t.c * 4.0))) / (t.a * 2.0);
 	ray_cylinder = get_cylinder_ray(start_pos, cylinder, t, ray);
-	return (_calc_t(cylinder, ray_cylinder, t));
+	return (caluculateRayLength(cylinder, ray_cylinder, t));
 }
 
 t_vector	get_normal_cylinder(t_vector intersection_pos, t_object *node)
