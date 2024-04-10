@@ -40,7 +40,7 @@ double	objectCollotion(t_vector start_pos, t_object *head, t_vector ray, t_objec
 		if (node->type == PLANE_TYPE)
 			t = lengthFromObject(t, hit_plane(ray, start_pos, obtainObjectCoordinates(node), ((t_plane *)node->object_data)->direction), node, obj);
 		else if (node->type == SPHERE_TYPE)
-			t = lengthFromObject(t, hit_sphere(ray, start_pos, obtainObjectCoordinates(node), ((t_sphere *)node->object_data)->diameter / 2), node, obj);
+			t = lengthFromObject(t, hit_sphere(ray, start_pos, obtainObjectCoordinates(node), ((t_sphere *)node->object_data)->diameter / 2.0), node, obj);
 		else if (node->type == CYLINDER_TYPE)
 			t = lengthFromObject(t, hit_cylinder(ray, start_pos, (t_cylinder *)node->object_data), node, obj);
 		node = node->next;

@@ -31,8 +31,8 @@ static t_screen screen_init(int x, int y, t_data *data)
     screen.w_s = 2.0;
     screen.h_s = WINDOW_HEIGHT / WINDOW_WIDTH * screen.w_s;
     screen.camera_to_screen = screen.w_s / (2.0 * tan(data->camera.fov * M_PI / 360.0));
-	screen.f_x = (screen.w_s * (double)x) / (WINDOW_WIDTH) - screen.w_s / 2;
-	screen.f_y = (-screen.h_s * (double)y) / (WINDOW_HEIGHT) + screen.h_s / 2;
+	screen.f_x = (screen.w_s * (double)x) / (WINDOW_WIDTH) - screen.w_s / 2.0;
+	screen.f_y = (-screen.h_s * (double)y) / (WINDOW_HEIGHT) + screen.h_s / 2.0;
     return (screen);
 }
 

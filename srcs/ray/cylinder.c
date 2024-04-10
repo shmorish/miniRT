@@ -45,7 +45,7 @@ double	hit_cylinder(t_vector ray, t_vector start_pos, t_cylinder *cylinder)
 	if (t.a == 0.0)
 		return (-1.0);
 	t.b = 2.0 * (dot_product(cross_product(ray, cylinder->direction), cross_product(subtraction(start_pos, cylinder->coordinate), cylinder->direction)));
-	t.c = magnitude_squared(cross_product(subtraction(start_pos, cylinder->coordinate), cylinder->direction)) - pow(cylinder->diameter / 2, 2.0);
+	t.c = magnitude_squared(cross_product(subtraction(start_pos, cylinder->coordinate), cylinder->direction)) - pow(cylinder->diameter / 2.0, 2.0);
 	t.d = pow(t.b, 2.0) - (4.0 * t.a * t.c);
 	if (t.d == 0)
 		t.t = (-(t.b) / (2.0 * t.a));
