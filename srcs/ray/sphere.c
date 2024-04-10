@@ -15,12 +15,12 @@ static double	caluculateRayLength(double a, double b, double c)
 double	hit_sphere(t_vector ray, t_vector camera_pos, t_vector obj_pos, double radius)
 {
 	const double	a = magnitude_squared(ray);
-	const double	b = 2.0 * dot_product(subtraction(camera_pos, obj_pos), ray);
+	const double	b = dot_product(subtraction(camera_pos, obj_pos), ray) * 2.0;
 	const double	c = magnitude_squared(subtraction(camera_pos, obj_pos)) - pow(radius, 2.0);
-	const double	d = pow(b, 2.0) - (4.0 * a * c);
+	const double	d = pow(b, 2.0) - (a * c * 4.0);
 
 	if (d == 0.0)
-		return (-(b) / (2.0 * a));
+		return (-b / (a * 2.0));
 	else if (d < 0)
 		return (-1.0);
 	return (caluculateRayLength(a, b, c));
