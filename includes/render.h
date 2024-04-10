@@ -24,7 +24,7 @@ int		close_window(t_data *data);
 void	my_mlx_init(t_data *data);
 
 // pixel_put.c
-void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
+void	mlxPixel(t_mlx *mlx, int x, int y, int color);
 
 // render.c
 void	render(t_data *data);
