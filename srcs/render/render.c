@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 03:18:14 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/03 04:21:04 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/11 00:21:08 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	draw(t_data *data)
 		x = 0;
 		while (x < WINDOW_WIDTH)
 		{
-			camera_ray = getCameraRay(data, x, y);
+			camera_ray = get_camera_ray(data, x, y);
 			put_pixel(data, camera_ray, x, y);
 			x++;
 		}
