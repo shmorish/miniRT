@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:08:19 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 08:37:33 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:56:40 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef enum e_object_type			t_object_type;
 
 typedef struct s_rgb				t_rgb;
+typedef struct s_float_rgb			t_float_rgb;
 typedef struct s_vector				t_vector;
 typedef struct s_ambient_lightning	t_ambient_lightning;
 typedef struct s_camera				t_camera;
@@ -25,7 +26,9 @@ typedef struct s_plane				t_plane;
 typedef struct s_cylinder			t_cylinder;
 typedef struct s_object				t_object;
 typedef struct s_is_set				t_is_set;
+typedef struct s_mlx				t_mlx;
 typedef struct s_data				t_data;
+typedef struct s_quadratic_equation	t_quadratic_equation;
 
 enum e_object_type
 {
@@ -35,7 +38,17 @@ enum e_object_type
 	CYLINDER_TYPE,
 };
 
+# define WINDOW_WIDTH	800.0
+# define WINDOW_HEIGHT	600.0
+
 struct s_rgb
+{
+	int	red;
+	int	green;
+	int	blue;
+};
+
+struct s_float_rgb
 {
 	int	red;
 	int	green;
@@ -83,13 +96,26 @@ struct s_plane
 	int			color;
 };
 
+// なんとかする
+struct s_quadratic_equation
+{
+	double	a;
+	double	b;
+	double	c;
+	double	d;
+	double	t;
+	double	t1;
+	double	t2;
+};
+
 struct s_cylinder
 {
-	t_vector	coordinate;
-	t_vector	direction;
-	double		diameter;
-	double		height;
-	int			color;
+	t_vector				coordinate;
+	t_vector				direction;
+	double					diameter;
+	double					height;
+	int						color;
+	t_quadratic_equation	t;
 };
 
 struct s_object
@@ -106,6 +132,19 @@ struct s_is_set
 	bool	light;
 };
 
+struct s_mlx
+{
+	void	*mlx;
+	void	*win;
+	void	*img_ptr;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
+};
+
 struct s_data
 {
 	t_ambient_lightning	ambient_lightning;
@@ -113,6 +152,7 @@ struct s_data
 	t_light				light;
 	t_object			*object;
 	t_is_set			is_set;
+	t_mlx				*mlx;
 };
 
 #endif

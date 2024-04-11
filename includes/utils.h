@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 20:31:51 by tsishika          #+#    #+#             */
-/*   Updated: 2024/04/02 04:25:27 by tsishika         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:55:11 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,10 @@ void	print_error_with_context_and_exit(char *str1, char *str2);
 char	**split_string_by_whitespace(char *line);
 char	**split_string_by_comma(char *line);
 void	free_split(char **split);
+
+// color.c
+t_rgb	integer_to_rgb(int color);
+double	color_to_fcolor(double color);
+int		trans_color(int red, int green, int blue);
 
 #endif

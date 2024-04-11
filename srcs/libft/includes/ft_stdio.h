@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stdio.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shmorish <shmorish@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 10:07:11 by shmorish          #+#    #+#             */
-/*   Updated: 2024/02/26 10:10:38 by shmorish         ###   ########.fr       */
+/*   Updated: 2024/04/03 03:30:04 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 int		ft_printf(const char *format, ...);
 int		ft_putchar_fd(char c, int fd);
-int     ft_putdbl_fd(double num, int fd);
+int		ft_putdbl_fd(double num, int fd);
 int		ft_putendl_fd(const char *s, int fd);
 int		ft_putnbr_fd(int num, int fd);
 int		ft_putstr_fd(char *str, int fd);
