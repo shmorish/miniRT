@@ -43,7 +43,7 @@ debug		: re
 address		: re
 
 norm		:
-	norminette srcs includes libft
+	norminette srcs includes
 
 help		: Makefile
 	@echo "Usage: make [target]"
