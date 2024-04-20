@@ -11,47 +11,24 @@ CFLAGS+=-O2 -w
 # add to match string put with X11 in size and position
 CFLAGS+= -DSTRINGPUTX11
 
-CHECK		= \033[32m[✔]\033[0m
-REMOVE		= \033[31m[✘]\033[0m
-GENERATE	= \033[33m[➤]\033[0m
-BLUE		= \033[1;34m
-YELLOW		= \033[1;33m
-RESET		= \033[0m
-
-TOTAL_FILES := $(shell echo $(words $(SRC)))
-CURRENT_FILE = 1
-
-define progress
-    @printf "$(GENERATE) $(YELLOW)Minilibx obj file gen Progress: %3d%% (%d/%d)$(RESET)\r" $$(($(CURRENT_FILE)*100/$(TOTAL_FILES))) $(CURRENT_FILE) $(TOTAL_FILES)
-    @$(eval CURRENT_FILE=$(shell echo $$(($(CURRENT_FILE)+1))))
-    @if [ $(CURRENT_FILE) -gt $(TOTAL_FILES) ]; then \
-        printf "$(GENERATE) $(YELLOW)Finish Generating MLX Object files !%-50.50s\n$(RESET)"; \
-    fi
-endef
-
 all: $(NOM)
 
 $(NOM):	$(OBJ)
-	@ ar rc $(NOM) $(OBJ)
-	@ ranlib $(NOM)
-	@ printf "$(CHECK) $(BLUE)Compiling minilbx...%-50.50s\n$(RESET)"
+	ar rc $(NOM) $(OBJ)
+	ranlib $(NOM)
 
 %.o: %.c
-	@ cc -c $< -o $@ $(CFLAGS)
-	$(call progress)
+	cc -c $< -o $@ $(CFLAGS)
 
 %.o: %.m
-	@ cc -c $< -o $@ $(CFLAGS)
-	$(call progress)
+	cc -c $< -o $@ $(CFLAGS)
 
 clean:
-	@ rm -f $(NOM) $(OBJ) *~
-	@ rm -f mlx_app
-	@ echo "$(REMOVE) $(BLUE)Remove minilbx object files. $(RESET)"
+	rm -f $(NOM) $(OBJ) *~
+	rm -f mlx_app
 
 fclean:
-	@ rm -f $(NOM) $(OBJ) *~
-	@ rm -f mlx_app
-	@ echo "$(REMOVE) $(BLUE)Remove minilbx object files and $(NOM). $(RESET)"
+	rm -f $(NOM) $(OBJ) *~
+	rm -f mlx_app
 
 re: fclean all
