@@ -18,20 +18,20 @@ void	print_ambient_lightning(t_data *data)
 	const int	green = data->ambient_lightning.color >> 8 & 0xFF;
 	const int	blue = data->ambient_lightning.color & 0xFF;
 
-	printf("ambient lightning\n");
-	printf("ratio: %f\n", data->ambient_lightning.ratio);
-	printf("color: %d\n", data->ambient_lightning.color);
-	printf("color: %d %d %d\n", red, green, blue);
+	ft_printf("ambient lightning\n");
+	ft_printf("ratio: %f\n", data->ambient_lightning.ratio);
+	ft_printf("color: %d\n", data->ambient_lightning.color);
+	ft_printf("color: %d %d %d\n", red, green, blue);
 }
 
 void	print_camera(t_data *data)
 {
-	printf("camera\n");
-	printf("coordinate: %f %f %f\n", data->camera.coordinate.x,
+	ft_printf("camera\n");
+	ft_printf("coordinate: %f %f %f\n", data->camera.coordinate.x,
 		data->camera.coordinate.y, data->camera.coordinate.z);
-	printf("direction: %f %f %f\n", data->camera.direction.x,
+	ft_printf("direction: %f %f %f\n", data->camera.direction.x,
 		data->camera.direction.y, data->camera.direction.z);
-	printf("fov: %f\n", data->camera.fov);
+	ft_printf("fov: %f\n", data->camera.fov);
 }
 
 void	print_light(t_data *data)
@@ -40,12 +40,12 @@ void	print_light(t_data *data)
 	const int	green = data->light.color >> 8 & 0xFF;
 	const int	blue = data->light.color & 0xFF;
 
-	printf("light\n");
-	printf("position: %f %f %f\n", data->light.position.x,
+	ft_printf("light\n");
+	ft_printf("position: %f %f %f\n", data->light.position.x,
 		data->light.position.y, data->light.position.z);
-	printf("ratio: %f\n", data->light.ratio);
-	printf("color: %d\n", data->light.color);
-	printf("color: %d %d %d\n", red, green, blue);
+	ft_printf("ratio: %f\n", data->light.ratio);
+	ft_printf("color: %d\n", data->light.color);
+	ft_printf("color: %d %d %d\n", red, green, blue);
 }
 
 int	main(int argc, char **argv)

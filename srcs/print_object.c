@@ -18,12 +18,12 @@ void	print_sphere(t_sphere *sphere)
 	const int	green = sphere->color >> 8 & 0xFF;
 	const int	blue = sphere->color & 0xFF;
 
-	printf("sphere\n");
-	printf("coordinate: %f %f %f\n", sphere->coordinate.x,
+	ft_printf("sphere\n");
+	ft_printf("coordinate: %f %f %f\n", sphere->coordinate.x,
 		sphere->coordinate.y, sphere->coordinate.z);
-	printf("diameter: %f\n", sphere->diameter);
-	printf("color: %d\n", sphere->color);
-	printf("color: %d %d %d\n", red, green, blue);
+	ft_printf("diameter: %f\n", sphere->diameter);
+	ft_printf("color: %d\n", sphere->color);
+	ft_printf("color: %d %d %d\n", red, green, blue);
 }
 
 void	print_plane(t_plane *plane)
@@ -32,13 +32,13 @@ void	print_plane(t_plane *plane)
 	const int	green = plane->color >> 8 & 0xFF;
 	const int	blue = plane->color & 0xFF;
 
-	printf("plane\n");
-	printf("coordinate: %f %f %f\n", plane->coordinate.x,
+	ft_printf("plane\n");
+	ft_printf("coordinate: %f %f %f\n", plane->coordinate.x,
 		plane->coordinate.y, plane->coordinate.z);
-	printf("direction: %f %f %f\n", plane->direction.x,
+	ft_printf("direction: %f %f %f\n", plane->direction.x,
 		plane->direction.y, plane->direction.z);
-	printf("color: %d\n", plane->color);
-	printf("color: %d %d %d\n", red, green, blue);
+	ft_printf("color: %d\n", plane->color);
+	ft_printf("color: %d %d %d\n", red, green, blue);
 }
 
 void	print_cylinder(t_cylinder *cylinder)
@@ -47,15 +47,15 @@ void	print_cylinder(t_cylinder *cylinder)
 	const int	green = cylinder->color >> 8 & 0xFF;
 	const int	blue = cylinder->color & 0xFF;
 
-	printf("cylinder\n");
-	printf("coordinate: %f %f %f\n", cylinder->coordinate.x,
+	ft_printf("cylinder\n");
+	ft_printf("coordinate: %f %f %f\n", cylinder->coordinate.x,
 		cylinder->coordinate.y, cylinder->coordinate.z);
-	printf("direction: %f %f %f\n", cylinder->direction.x,
+	ft_printf("direction: %f %f %f\n", cylinder->direction.x,
 		cylinder->direction.y, cylinder->direction.z);
-	printf("diameter: %f\n", cylinder->diameter);
-	printf("height: %f\n", cylinder->height);
-	printf("color: %d\n", cylinder->color);
-	printf("color: %d %d %d\n", red, green, blue);
+	ft_printf("diameter: %f\n", cylinder->diameter);
+	ft_printf("height: %f\n", cylinder->height);
+	ft_printf("color: %d\n", cylinder->color);
+	ft_printf("color: %d %d %d\n", red, green, blue);
 }
 
 void	print_object(t_data *data)
